@@ -52,6 +52,10 @@ function updateGame(updateScore, updateTimer, newTarget)
     score = score + updateScore
     timer = timer + updateTimer
 
+    if score < 0 then 
+        score = 0
+    end
+
     if newTarget then
         target.x = math.random(target.radius, love.graphics.getWidth()-target.radius)
         target.y = math.random(target.radius+50, love.graphics.getHeight()-target.radius)
